@@ -5,6 +5,7 @@
  * Namespaces indicate folder structure.
  */
 Route::get('/', 'BackendController@index')->name('home');
+Route::get('dashboard', 'BackendController@index')->name('backend.posts.index');
 Route::get('dashboard', 'BackendController@index')->name('dashboard');
 
 /*

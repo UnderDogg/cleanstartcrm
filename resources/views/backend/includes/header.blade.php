@@ -14,14 +14,22 @@
             <a class="nav-link" href="{{ route('frontend.index') }}" target="_blank"> {{ app_name() }} </a>
         </li>
     </ul>
-    <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item d-md-down-none">
+
+    <nav class="navbar navbar-dark bg-primary justify-content-between ">
+        <!-- Navbar content -->
+        <ul class="horizontal-navbar navbar-nav mr-auto mt-lg-0">
+            @include('backend.includes.custom-menu-items', ['items' => $MyNavBar->roots()])
+        </ul>
+    </nav><!--/nav-->
+
+    <ul class="nav navbar-nav ml-auto mr-5">
+        <li class="nav-item d-md-down-none mr-5">
             <a class="nav-link" href="#">
                 <i class="icon-bell"></i>
                 <span class="badge badge-pill badge-danger">5</span>
             </a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown mr-5">
             <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <img src="{{ asset(auth()->user()->avatar) }}" class="img-avatar" alt="{{ auth()->user()->name }}">
             </a>

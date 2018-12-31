@@ -84,6 +84,8 @@ class BackupController extends Controller
     {
         try {
             // start the backup process
+            $command = "";
+            //--only-db --disable-notifications
             Artisan::call('backup:run');
             $output = Artisan::output();
             // log the results
@@ -91,6 +93,7 @@ class BackupController extends Controller
             // return the results as a response to the ajax call
             // Alert::success('New backup created');
             flash("<i class='fas fa-check'></i> New backup created")->success()->important();
+            dd($output);
 
             return redirect()->back();
         } catch (Exception $e) {

@@ -16,6 +16,28 @@ class GenerateMenus
      */
     public function handle($request, Closure $next)
     {
+
+
+
+
+        \Menu::make('MyNavBar', function ($menu) {
+            $menu->add('Home');
+            $menu->add('About', 'about');
+            $menu->add('Services', 'services');
+            $menu->add('Contact', 'contact');
+        });
+    
+        return $next($request);
+
+
+
+
+
+
+
+
+
+
         \Menu::make('admin_sidebar', function ($menu) {
             // Dashboard
             $menu->add('<i class="nav-icon icon-speedometer"></i> Dashboard', [
