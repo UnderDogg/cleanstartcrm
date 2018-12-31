@@ -25,6 +25,5 @@
         "simple-line-icons": "^2.4.1",
         "vue": "^2.5.7"
     },
-    "dependencies": {
-    }
+    "dependencies": {}
 }
