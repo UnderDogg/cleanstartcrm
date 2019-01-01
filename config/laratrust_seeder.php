@@ -2,13 +2,18 @@
 
 return [
     'role_structure' => [
-        'superadministrator' => [
-            'users' => 'c,r,u,d',
-            'acl' => 'c,r,u,d',
+        'owner' => [
+            'users' => 'c,p,r,u,d',
+            'acl' => 'c,p,r,u,d',
+            'profile' => 'r,u'
+        ],
+		'superadministrator' => [
+            'users' => 'c,p,r,u,d',
+            'acl' => 'c,p,r,u,d',
             'profile' => 'r,u'
         ],
         'administrator' => [
-            'users' => 'c,r,u,d',
+            'users' => 'c,p,r,u,d',
             'profile' => 'r,u'
         ],
         'user' => [
@@ -17,11 +22,12 @@ return [
     ],
     'permission_structure' => [
         'cru_user' => [
-            'profile' => 'c,r,u'
+            'profile' => 'c,p,r,u'
         ],
     ],
     'permissions_map' => [
         'c' => 'create',
+        'p' => 'copy',
         'r' => 'read',
         'u' => 'update',
         'd' => 'delete'

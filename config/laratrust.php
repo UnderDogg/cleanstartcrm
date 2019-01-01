@@ -18,7 +18,7 @@ return [
     | are going to be used are the ones inside the 'user_models' array.
     |
     */
-    'use_morph_map' => false,
+    'use_morph_map' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ return [
     |
     */
     'user_models' => [
-        'users' => 'App\User',
+        'staff' => 'Modules\Core\Models\Staff',
     ],
 
     /*
@@ -84,17 +84,17 @@ return [
         /**
          * Role model
          */
-        'role' => 'App\Role',
+        'role' => 'Modules\Core\Models\Role',
 
         /**
          * Permission model
          */
-        'permission' => 'App\Permission',
+        'permission' => 'Modules\Core\Models\Permission',
 
         /**
          * Team model
          */
-        'team' => 'App\Team',
+        'team' => 'Modules\Core\Models\Team',
 
     ],
 
@@ -125,12 +125,12 @@ return [
         /**
          * Role - User intermediate table.
          */
-        'role_user' => 'role_user',
+        'role_user' => 'role_staff',
 
         /**
          * Permission - User intermediate table.
          */
-        'permission_user' => 'permission_user',
+        'permission_staff' => 'permission_staff',
 
         /**
          * Permission - Role intermediate table.
@@ -151,7 +151,7 @@ return [
         /**
          * User foreign key on Laratrust's role_user and permission_user tables.
          */
-        'user' => 'user_id',
+        'staff' => 'staff_id',
 
         /**
          * Role foreign key on Laratrust's role_user and permission_role tables.
@@ -180,20 +180,15 @@ return [
     */
     'middleware' => [
         /**
-         * Define if the laratrust middleware are registered automatically in the service provider
-         */
-        'register' => true,
-
-        /**
          * Method to be called in the middleware return case.
          * Available: abort|redirect
          */
-        'handling' => 'abort',
+        'handling' => 'redirect',
 
         /**
          * Parameter passed to the middleware_handling method
          */
-        'params' => '403',
+        'params' => 'auth/login',
 
     ],
 

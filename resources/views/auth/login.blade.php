@@ -70,14 +70,16 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="input-email"><i class="fas fa-at"></i></span>
                             </div>
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email address" aria-label="Email" aria-describedby="input-email" required>
+                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
+                                placeholder="Email address" aria-label="Email" aria-describedby="input-email" required>
                         </div>
 
                         <div class="input-group mb-3 input-lg {{ $errors->has('password') ? ' has-danger' : '' }}">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="input-password"><i class="fas fa-key"></i></span>
                             </div>
-                            <input id="password" type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="input-password" required>
+                            <input id="password" type="password" class="form-control" name="password" placeholder="Password"
+                                aria-label="Password" aria-describedby="input-password" required>
                         </div>
                     </div>
 
